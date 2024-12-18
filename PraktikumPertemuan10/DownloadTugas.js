@@ -12,7 +12,7 @@ const showDownload = (result) => {
     console.log(`Hasil Download: ${result}`);
 };
 
-// Menggunakan async/await
+//using async/await
 const startDownload = async () => {
     try {
         const result = await DownloadTugas();
