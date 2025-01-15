@@ -5,7 +5,7 @@ const Alumni = require('../models/Alumni');
 class AlumniController {
   // buat fungsi
   getAll(req, res) {
-    Alumni.getAll((err, results) => {
+    Alumni.all((err, results) => {
       if (err) {
         return res.status(500).json({ message: 'Error retrieving data', error: err });
       }

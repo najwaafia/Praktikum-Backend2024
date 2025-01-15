@@ -1,11 +1,11 @@
 // import AlumniController
+const AlumniController = require('../controllers/AlumniController');
 
 // import express
 const express = require("express");
 
 // membuat object router
 const router = express.Router();
-const AlumniController = require('../controllers/AlumniController');
 
 /**
  * Membuat routing

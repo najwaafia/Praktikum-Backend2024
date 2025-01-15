@@ -4,19 +4,19 @@ const db = require('../config/database');
 // membuat class Alumni
 class Alumni {
   // buat fungsi
-  static all(callback) {
+  all(callback) {
     const query = 'SELECT * FROM alumni';
     db.query(query, callback);
   }
 
   //search/cari data berdasarkan ID
-  static getById(id, callback) {
+  getById(id, callback) {
     const query = 'SELECT * FROM alumni WHERE id = ?';
     db.query(query, [id], callback);
   }
 
   //menambahkan data ke database
-  static async create(data, callback) {
+  async create(data, callback) {
     if (callback) {
       const query = `INSERT INTO alumni SET ?`;
       db.query(query, data, (err, results) => {
@@ -48,7 +48,7 @@ class Alumni {
   }
 
   //update data berdasarkan ID
-  static async updateById(id, data, callback) {
+  async updateById(id, data, callback) {
     if (callback) {
       const query = `UPDATE alumni SET ? WHERE id = ?`;
       db.query(query, [data, id], (err, results) => {
@@ -80,7 +80,7 @@ class Alumni {
   }
 
   //menghapus data berdasarkan ID
-  static delete(id, callback) {
+  delete(id, callback) {
     const query = 'DELETE FROM alumni WHERE id = ?';
     db.query(query, [id], callback);
   }
